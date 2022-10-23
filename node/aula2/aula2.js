@@ -12,4 +12,6 @@ const servidor = http.createServer(function (request, response){
   else{
     response.write("<h1>FORTUNATO</h1>")}
   response.end();
-}).listen(porta, host, function(){console.log("servidor rodando")});
+});
+
+servidor.listen(porta, host, function(){console.log("servidor rodando")});
