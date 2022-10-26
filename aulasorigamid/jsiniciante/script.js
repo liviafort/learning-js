@@ -69,3 +69,64 @@ console.log(idade > 58);
 console.log(idade < 58);
 console.log((5-1)&&(5 - ' ')&&(5-2));
 console.log(!!28);
+//funções
+function soma(parcela1, parcela2){
+  return parcela1+parcela2;
+}
+console.log(soma(1,2));
+addEventListener('click', function(){
+  console.log("VOCE CLICOU");
+});
+function digaoi(){
+  console.log("oi");
+}
+digaoi();
+//verificar se é true
+function verificar(valor){
+  if(!!valor === true){
+    return console.log("é verdadeiro"); //da pra usar isTruthy()
+  }
+  return console.log("é falso");
+}
+verificar(1);
+//calcular perimetro
+function perimetro(lado1){
+  return console.log(lado1*4);
+}
+perimetro(3);
+//nome completo
+function nomelivia(nome, sobrenome){
+  return console.log(nome + ' ' + sobrenome);
+}
+nomelivia("livia maria", "fortunato");
+//verifica se o numero par
+function par(numero){
+  if(numero%2===0){
+    return console.log("par");
+  }
+  return console.log("impar");
+}
+par(2);
+//tipo
+function tipo(variavel){
+  return console.log(typeof(variavel));
+};
+tipo('oi');
+tipo(true);
+tipo("oi" + 50);
+//eventor scroll
+addEventListener('scroll', function(){
+  console.log("scroll");
+});
+//corrigir codigo
+function precisovisitar(paises){
+  var totalPaises = 193;
+  return console.log(`ainda faltam ${totalPaises-paises}`);
+}
+function javisitei(paises){
+  //totalPaises n existia no escopo
+  var totalPaises = 193;
+  return console.log(`ja visitei ${paises} de um total de ${totalPaises}`);
+}
+precisovisitar(20)
+javisitei(20);
