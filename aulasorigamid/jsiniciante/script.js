@@ -18,7 +18,7 @@ console.log(um, dois, tres, quatro, cinco);
  console.log(isNaN(19 / numero));
  console.log(isNaN(numero / nome))
  
-//aula 4, 5, 6, 7, 8
+//aula 4, 5, 6, 7, 8, 9
 var soma1 = 10 + (10*3) / 2;
 console.log(soma1);
 console.log(++soma1);
@@ -130,3 +130,51 @@ function javisitei(paises){
 }
 precisovisitar(20)
 javisitei(20);
+//aula 10, 11, 12
+//objetos
+var pessoa = {
+  nome: 'Lívia',
+  sobrenome: 'Maria Fortunato',
+  nomeCompleto(){
+    return `${this.nome} ${this.sobrenome}`;
+  },
+  idade: 19,
+  cidadania: 'brasileira',
+};
+console.log(pessoa.nome);
+console.log(pessoa.nomeCompleto());
+var quadrado = {
+  lado: 4,
+  area: function(lado){
+    return lado*2;
+  },
+  perimetro(lado){
+    return lado*this.lado;
+  },
+}
+console.log(quadrado.area(30));
+console.log(quadrado.perimetro(30));
+var menu = {
+  width: 800,
+  height: 50,
+  backgroundColor: '#84E',
+}
+menu.backgroundColor = '#000';
+menu.color = 'blue';
+menu.dimensao = '1366x786';
+menu.height = 54;
+console.log(menu.height);
+
+var cachorro = {
+  nome: 'labrador',
+  cor: 'preto',
+  idade: 10,
+  latir(homem){
+    if(homem)
+      return `auauauauauauauau`;
+    return `cricricri`
+  },
+};
+
+console.log(cachorro.latir(true));
+console.log(cachorro.latir(false))
