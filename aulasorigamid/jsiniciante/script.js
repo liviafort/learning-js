@@ -175,6 +175,22 @@ var cachorro = {
     return `cricricri`
   },
 };
-
 console.log(cachorro.latir(true));
 console.log(cachorro.latir(false))
+function areaQuadrado(lado){
+  return lado * lado;
+}
+console.log(areaQuadrado.toString());
+console.log(areaQuadrado.length);
+
+var btn = document.querySelector('.btn');
+btn.addEventListener('click', function(){
+  console.log("oooce clicou no btn");
+})
+var nome = 'livia';
+console.log(nome.length);
+console.log(nome.concat(['maria']));
+console.log(nome.split('v'));
+console.log(nome.toLocaleUpperCase());
+
+
