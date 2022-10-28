@@ -228,8 +228,12 @@ for(let i=0; i<frutas.length; i++){
   console.log(frutas[i]);
 };
 //aula 15
- var podeBeber = (idade>=19) ? 'Pode beber' : 'Não pode beber';
+var podeBeber = (idade>=19) ? 'Pode beber' : 'Não pode beber';
 console.log(podeBeber);
+//aula 16
+//não usar mais var
+//utilizar apenas const e let a partir de agora
+console.log("VAR FOGE DO ESCOPOOOOOOO/BLOCOOOO");
 
 
 
