@@ -219,12 +219,17 @@ videoGames.forEach(function(ola){
   console.log(ola); //retorna elementos de videoGames
 });
 var frutas = ['maçã', 'melancia', 'pera', 'abacaxi'];
+var ultimafruta = frutas[frutas.length-1];
+console.log(ultimafruta);
 for(let i=0; i<frutas.length; i++){
   if(frutas[i]==='pera'){
     break;
   }
   console.log(frutas[i]);
 };
+//aula 15
+ var podeBeber = (idade>=19) ? 'Pode beber' : 'Não pode beber';
+console.log(podeBeber);
 
 
 
