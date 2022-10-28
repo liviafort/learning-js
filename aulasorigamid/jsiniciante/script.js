@@ -192,5 +192,40 @@ console.log(nome.length);
 console.log(nome.concat(['maria']));
 console.log(nome.split('v'));
 console.log(nome.toLocaleUpperCase());
+//aulas 13 e 14
+var videoGames = ['playstation', 'xbox', 'nitendo'];
+videoGames.pop('xbox');
+console.log(videoGames);
+videoGames.pop([-1]);
+console.log(videoGames);
+videoGames.push('nitendo');
+console.log(videoGames);
+
+console.log(videoGames.length);
+for(let i=0; i<10;i++){
+  if(i > videoGames.length){
+    videoGames.push('nãotemais');
+  }
+}
+for(let i=0; i<10;i++){
+  console.log(videoGames[i]);
+}
+var cont = 1;
+while(cont<10){
+  console.log(cont);
+  cont+=3;
+}
+videoGames.forEach(function(ola){
+  console.log(ola); //retorna elementos de videoGames
+});
+var frutas = ['maçã', 'melancia', 'pera', 'abacaxi'];
+for(let i=0; i<frutas.length; i++){
+  if(frutas[i]==='pera'){
+    break;
+  }
+  console.log(frutas[i]);
+};
+
+
 
 
