@@ -75,5 +75,55 @@ paragrafos.forEach((item) =>{
   return console.log(item.innerText);
 })
 
-
+//CLASSES E ATRIBUTOS
+//CLASSLIST Retorna uma lista com as classes do elemento. Permite adicionar, remover e verificar se contém.
+const menu = document.querySelector('.menu');
+console.log(menu.className); // string
+console.log(menu.classList); // lista de classes
+console.log(menu.classList.add('ativo', 'mobile')); // duas classes
+console.log(menu.classList.remove('ativo'));
+console.log(menu.classList.toggle('ativo')); // adiciona/remove a classe
+console.log(menu.classList.contains('ativo')); // true ou false,olha se existe
+console.log(menu.classList.replace('ativo', 'inativo')); //substitui a classe ativo por inativo
+//attributes
+const computadorres = document.querySelector('.computadores');
+console.log(computadorres.attributes); // retorna todos os atributos
+console.log(computadorres.attributes[0]); // retorna o primeiro atributo
+//GETATTRIBUTE E SETATTRIBUTE
+//Métodos que retornam ou definem de acordo com o atributo selecionado
+const img = document.querySelector('img');
+img.getAttribute('src'); // valor do src
+img.setAttribute('alt', 'Texto Alternativo'); // muda o alt
+img.hasAttribute('id'); // true / false
+img.removeAttribute('alt'); // remove o alt
+img.hasAttributes(); // true / false se tem algum atributo
+//READ ONLY VS WRITABLE
+/*Existem propriedades que não permitem a mudança de seus valores, essas são considerados Read Only, ou seja, apenas leitura.*/
+const pc = document.querySelector('.computadores');
+console.log(pc.className); // string com o nome das classes
+console.log(pc.className = 'azul'); // substitui completamente a string
+console.log(pc.className += ' vermelho'); // adiciona vermelho à string
+console.log(pc.attributes);
+console.log(pc.attributes = 'class="ativo"'); // não funciona, read-only
+console.log(pc.attributes);
+//exercicio
+// Adicione a classe ativo a todos os itens do menu
+const addmenu = document.querySelectorAll('.menu a');
+addmenu.forEach((item) =>{
+  item.classList.add('ativo');
+})
+// Remove a classe ativo de todos os itens do menu e mantenha apenas no primeiro
+let i = 0;
+addmenu.forEach((item) =>{
+  if(i!==0){
+    item.classList.remove('ativo');
+  }
+  i++;
+});
+// Verifique se as imagens possuem o atributo alt
+const temimg = document.querySelector('img');
+console.log(temimg.classList.contains('alt'));
+// Modifique o href do link externo no menu
+const linksk = document.querySelector('a[href^="http"]');
+linksk.setAttribute('href', 'https://github.com/liviafort/learning-js');
 
