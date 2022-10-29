@@ -59,3 +59,21 @@ const ultimop = document.getElementsByTagName('p');
 const tamanhop = ultimop.length;
 console.log(ultimop[tamanhop - 1]);
 
+//forEACH e ArrowFunction
+const tituloss = document.getElementsByClassName('titulo');
+const titulosArray = Array.from(titulos); //transforma em array
+titulosArray.forEach(function(item){
+  console.log(item);
+});
+//arrow function
+const imgs = document.querySelectorAll('img');
+imgs.forEach((item)=>{
+  return console.log(item);
+});
+const paragrafos = document.querySelectorAll('p');
+paragrafos.forEach((item) =>{
+  return console.log(item.innerText);
+})
+
+
+
