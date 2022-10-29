@@ -99,9 +99,9 @@ img.removeAttribute('alt'); // remove o alt
 img.hasAttributes(); // true / false se tem algum atributo
 //READ ONLY VS WRITABLE
 /*Existem propriedades que não permitem a mudança de seus valores, essas são considerados Read Only, ou seja, apenas leitura.*/
+
 const pc = document.querySelector('.computadores');
 console.log(pc.className); // string com o nome das classes
-console.log(pc.className = 'azul'); // substitui completamente a string
 console.log(pc.className += ' vermelho'); // adiciona vermelho à string
 console.log(pc.attributes);
 console.log(pc.attributes = 'class="ativo"'); // não funciona, read-only
@@ -127,3 +127,44 @@ console.log(temimg.classList.contains('alt'));
 const linksk = document.querySelector('a[href^="http"]');
 linksk.setAttribute('href', 'https://github.com/liviafort/learning-js');
 
+//DIMENSÕES E DISTÂNCIAS
+const sectionlista = document.querySelector('.computadores-lista');
+console.log(sectionlista.clientHeight); // height + padding
+console.log(sectionlista.offsetHeight); // height + padding + border
+console.log(sectionlista.scrollHeight); // height total, mesmo dentro de scroll
+//OFFSETTOP E OFFSETLEFT
+const section2 = document.querySelector('.computadores-lista');
+// Distância entre o topo do elemento e o topo da página
+console.log(section2.offsetTop);
+// Distância entre o canto esquerdo do elemento
+// e o canto esquerdo da página
+console.log(section2.offsetLeft);
+//GETBOUNDINGCLIENTRECT()
+/*Método que retorna um objeto com valores de width, height, distâncias do elemento e mais.*/
+const computerh1 = document.querySelector('h1');
+const recth1 = computerh1.getBoundingClientRect();
+console.log(recth1.height); // height do elemento
+console.log(recth1.width); // width do elemento
+console.log(recth1.top); // distância entre o topo do elemento e o scroll
+if(recth1.top < 0){
+  console.log('passou do elemento');
+}
+//WINDOW
+console.log(
+window.innerWidth, // width do janela
+window.outerWidth, // soma dev tools também
+window.innerHeight, // height do janela
+window.outerHeight, // soma a barra de endereço
+window.pageYOffset, // distância total do scroll vertical
+window.pageXOffset,); // distância total do scroll horizontal
+if(window.innerWidth < 600) {
+  console.log('Tela menor que 600px');
+}
+//MATCHMEDIA();
+/*Utilize um media-querie como no CSS para verificar a largura do browser*/
+const small = window.matchMedia('(max-width: 600px)');
+if(small.matches) {
+  console.log('Tela menor que 600px')
+} else {
+  console.log('Tela maior que 600px')
+}
