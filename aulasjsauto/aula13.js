@@ -8,20 +8,20 @@ function valoresform(){
   const nameValue = nameImput.value, emailValue = emailImput.value;
   if(nameValue && emailValue){
     form.style.background = "green";
+    valoresitem(nameValue, emailValue);
   }
   else{
     form.style.background = "red";
   }
-  valoresitem(nameValue, emailValue);
 });
 };
 
 function valoresitem(nameValue, emailValue){
   const items = document.querySelectorAll(".item");
   items.forEach((item, index) =>{
-    if(index===0)
+    if(index===0) //poderia usar o textcontent
       item.innerHTML = `<h1>${nameValue}</h1>`;
-    if(index===1)
+    if(index===1) //poderia usar o textcontent
       item.innerHTML = `<h1>${emailValue}</h1>`;
   });
 };
