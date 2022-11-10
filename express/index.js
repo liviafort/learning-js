@@ -1,29 +1,46 @@
 const express = require("express");
 const app = express();
 
-app.use(
-  express.urlencoded({
-    extended: true
-  })
-);
+function formaSemRotas(){
+  app.use(
+    express.urlencoded({
+      extended: true
+    })
+  );
+  app.get("/", (req, res)=>{
+    res.send(`<form action="/" method="POST">
+    Nome: <input type="text" name="nome">
+    <button>Enviar</button>
+    </form>`);
+   });
+  
+  app.post("/", (req, res) =>{
+    res.send(`O que foi enviado: ${req.body.nome}`);
+  });
 
-app.get("/", (req, res)=>{
-  res.send(`<form action="/" method="POST">
-  Nome: <input type="text" name="nome">
-  <button>Enviar</button>
-  </form>`);
- });
+  app.get("/single/:idUsuarios?", (req, res)=>{
+    console.log(req.params);
+    console.log(req.query);
+    res.send(req.query.nome);
+   });
+  
+  app.listen(3000, () =>{
+    console.log("Lívia")
+   });
+}
 
-app.post("/", (req, res) =>{
-  res.send(`O que foi enviado: ${req.body.nome}`);
-});
+function Rotas(){
+  app.use(express.urlencoded({
+      extended: true
+  }));
+  const routes = require("./routes");
+  app.use(routes);
+  app.listen(3000, () =>{
+    console.log("Servidor executando na porta 3000");
+   });
+}
 
-app.get("/single/:idUsuarios?", (req, res)=>{
-  console.log(req.params);
-  console.log(req.query);
-  res.send(req.query.nome);
- });
-
- app.listen(3000, () =>{
-  console.log("Lívia")
- });
+//main
+{
+  Rotas();
+}
